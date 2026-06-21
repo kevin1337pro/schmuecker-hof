@@ -13,6 +13,12 @@ npm run dev
 
 Danach ist die Website unter `http://localhost:3000` verfügbar.
 
+Für den GitHub-Pages-Export wird der Repository-Pfad beim Build gesetzt:
+
+```bash
+GITHUB_PAGES=true npm run build
+```
+
 ## Umsetzungsstand
 
 - [x] Next.js- und TypeScript-Grundlage
