@@ -1,8 +1,10 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
+import { assetPath } from "@/lib/assets";
 
 type PageHeroProps = {
   eyebrow: string;
-  title: React.ReactNode;
+  title: ReactNode;
   text: string;
   primaryLabel: string;
   primaryHref: string;
@@ -13,7 +15,7 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, title, text, primaryLabel, primaryHref, secondaryLabel, secondaryHref }: PageHeroProps) {
   return (
     <section className="page-hero">
-      <Image className="hero-image" src="/images/hof-eingang.jpg" alt="Schmücker Hof in Kirchhellen" fill priority sizes="100vw" />
+      <Image className="hero-image" src={assetPath("/images/hof-eingang.jpg")} alt="Schmücker Hof in Kirchhellen" fill priority sizes="100vw" />
       <div className="hero-shade" />
       <div className="page-hero-content wrap">
         <p className="eyebrow eyebrow--light">{eyebrow}</p>

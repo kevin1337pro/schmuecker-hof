@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { assetPath } from "@/lib/assets";
 
 const worlds = [
   { id: "hofkueche", href: "/hofkueche", number: "01", title: "Hofküche", text: "Frühstück, regionale Küche, Kaffee und Kuchen – mit Zeit zum Genießen.", link: "Speisekarten entdecken" },
@@ -14,7 +15,7 @@ export default function Home() {
     <main id="top">
       <Header />
       <section className="hero" aria-labelledby="hero-title">
-        <Image className="hero-image" src="/images/hof-eingang.jpg" alt="Eingang des Schmücker Hofs" fill priority sizes="100vw" />
+        <Image className="hero-image" src={assetPath("/images/hof-eingang.jpg")} alt="Eingang des Schmücker Hofs" fill priority sizes="100vw" />
         <div className="hero-shade" />
         <div className="hero-content wrap">
           <p className="eyebrow eyebrow--light">Willkommen in Kirchhellen</p>
@@ -39,6 +40,10 @@ export default function Home() {
           <h2>Ein Ort, der nach Zuhause schmeckt.</h2>
           <p>Seit Generationen verbinden wir ländliche Atmosphäre mit echter Gastfreundschaft. Heute ist der Schmücker Hof ein Ort zum Einkaufen, Genießen, Feiern und Entdecken – für die ganze Region.</p>
         </div>
+        <div className="brand-story">
+          <div className="brand-story-image"><Image src={assetPath("/images/hof-markenzeichen.jpg")} alt="Markenzeichen des Schmücker Hofs" fill sizes="(max-width: 700px) 100vw, 45vw" /></div>
+          <div><p className="eyebrow">Mit Herz gemacht</p><h3>Tradition im Kern.<br />Heute neu erlebt.</h3><p>Was auf dem Hof wächst, wird mit Sorgfalt ausgewählt, zubereitet und mit anderen geteilt. Genau das macht den Schmücker Hof aus.</p></div>
+        </div>
       </section>
 
       <section className="worlds wrap" aria-labelledby="worlds-title">
@@ -55,6 +60,14 @@ export default function Home() {
               <a href={world.href}>{world.link} <span>→</span></a>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="season-feature">
+        <div className="season-grass"><Image src={assetPath("/images/wiese.jpg")} alt="Sommerwiese auf dem Hof" fill sizes="100vw" /></div>
+        <div className="wrap season-feature-grid">
+          <div className="season-feature-copy"><p className="eyebrow">Saison auf dem Hof</p><h2>Frisch vom Feld.<br />Mitten ins Herz.</h2><p>Die Erdbeerzeit ist da: Entdecken Sie frische Früchte im Hofmarkt, beim Selbstpflücken und in unserer Hofküche.</p><a className="button" href="#hofplantagen">Saison erleben <span>→</span></a></div>
+          <div className="season-feature-image"><Image src={assetPath("/images/erdbeerbaum.jpg")} alt="Erdbeeren auf dem Schmücker Hof" fill sizes="(max-width: 700px) 80vw, 42vw" /></div>
         </div>
       </section>
 
