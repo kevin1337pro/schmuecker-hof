@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { HofMoments } from "@/components/HofMoments";
 import { assetPath } from "@/lib/assets";
 
 const worlds = [
@@ -70,6 +71,8 @@ export default function Home() {
           <div className="season-feature-image"><Image src={assetPath("/images/erdbeerbaum.jpg")} alt="Erdbeeren auf dem Schmücker Hof" fill sizes="(max-width: 700px) 80vw, 42vw" /></div>
         </div>
       </section>
+
+      <HofMoments image={assetPath("/images/erdbeer-stillleben.jpg")} />
 
       <section className="reservation" id="reservieren">
         <div className="wrap reservation-grid">
